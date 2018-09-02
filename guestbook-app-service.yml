@@ -5,12 +5,14 @@ metadata:
   labels:
     app: guestbook-app-service
 spec:
-  type: LoadBalancer
-#  type: NodePort
+#  type: LoadBalancer
+  type: NodePort
   ports:
     - port: 80
-      targetPort: 3000 # Guestbook app listens on 3000 and not on 80
-      nodePort: 30100  # fixed so that we do not need to find it out every time
+      # Guestbook app listens on 3000 and not on 80
+      targetPort: 3000
+      # fixed so that we do not need to find it out every time
+      nodePort: 30100
   selector:
     app: guestbook-app
     name: guestbook-app
