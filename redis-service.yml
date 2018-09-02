@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: redis-service
+  name: redis-master # this is the name the guestbook app tries to find the redis
   labels:
     app: redis-service
 spec:
